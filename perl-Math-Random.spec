@@ -1,21 +1,18 @@
+%define upstream_name    Math-Random
+%define upstream_version 0.71
 
-%define realname   Math-Random
-%define version    0.71
-%define release    %mkrel 1
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
-Name:       perl-%{realname}
-Version:    %{version}
-Release:    %{release}
-License:    GPL or Artistic
-Group:      Development/Perl
 Summary:    Random Number Generators
-Source:     http://www.cpan.org/modules/by-module/Math/%{realname}-%{version}.tar.gz
-Url:        http://search.cpan.org/dist/%{realname}
-BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}-buildroot
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Math/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires: perl-devel
-
-
-
+BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 *Math::Random* is a *Perl* port of the *C* version of *randlib*, which is a
@@ -36,7 +33,7 @@ Default Routines
     average Perl programmer is likely to need.
 
 %prep
-%setup -q -n %{realname}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -57,5 +54,4 @@ rm -rf %buildroot
 %doc Changes README README
 %{_mandir}/man3/*
 %perl_vendorlib/*
-
 
