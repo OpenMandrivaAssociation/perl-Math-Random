@@ -55,3 +55,28 @@ rm -rf %buildroot
 %{_mandir}/man3/*
 %perl_vendorlib/*
 
+
+
+%changelog
+* Tue Jan 24 2012 Stéphane Téletchéa <steletch@mandriva.org> 0.710.0-3
++ Revision: 768089
+- Convert to new rpm numbering scheme
+- Rebuild for new perl
+
+* Tue Jul 20 2010 Jérôme Quelin <jquelin@mandriva.org> 0.710.0-2mdv2011.0
++ Revision: 555264
+- rebuild
+
+* Tue Jul 28 2009 Jérôme Quelin <jquelin@mandriva.org> 0.710.0-1mdv2010.0
++ Revision: 401633
+- rebuild using %%perl_convert_version
+- fixed license field
+
+* Tue Feb 17 2009 Jérôme Quelin <jquelin@mandriva.org> 0.71-1mdv2009.1
++ Revision: 342095
+- import perl-Math-Random
+
+
+* Tue Feb 17 2009 cpan2dist 0.71-1mdv
+- initial mdv release, generated with cpan2dist
+
