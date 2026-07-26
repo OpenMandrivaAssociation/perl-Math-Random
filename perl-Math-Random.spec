@@ -1,15 +1,13 @@
 %define upstream_name    Math-Random
-%define upstream_version 0.75
-
 Name:       perl-%{upstream_name}
-Version:    %{upstream_version}
-Release:    1
+Version:    0.75
+Release:    2
 
 Summary:    Random Number Generators
 License:    GPL+ or Artistic
 Group:      Development/Perl
 Url:        https://github.com/djerius/Math-Random
-Source0:    https://cpan.metacpan.org/authors/id/D/DJ/DJERIUS/Math-Random-%{upstream_version}.tar.gz
+Source0:    https://cpan.metacpan.org/authors/id/D/DJ/DJERIUS/Math-Random-%{version}.tar.gz
 
 BuildRequires:	make
 BuildRequires: perl-devel
@@ -34,7 +32,7 @@ Default Routines
     average Perl programmer is likely to need.
 
 %prep
-%setup -q -n %{upstream_name}-%{upstream_version}
+%setup -q -n %{upstream_name}-%{version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -70,8 +68,7 @@ rm -rf %buildroot
 
 * Tue Jul 28 2009 Jérôme Quelin <jquelin@mandriva.org> 0.710.0-1mdv2010.0
 + Revision: 401633
-- rebuild using %%perl_convert_version
-- fixed license field
+- rebuild using %0.75 fixed license field
 
 * Tue Feb 17 2009 Jérôme Quelin <jquelin@mandriva.org> 0.71-1mdv2009.1
 + Revision: 342095
